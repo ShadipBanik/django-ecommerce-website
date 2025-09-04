@@ -1,0 +1,55 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+    {% load static %}
+  <div class="container">
+  {% for category, products in category_products.items %}
+   <h2 class="px-4 py-2">{{category}}</h2>
+  <div id="demo{{forloop.counter}}" class="carousel slide px-4 py-2 " >
+    <!-- Indicators -->
+<!--    <div class="carousel-indicators">-->
+<!--      <button type="button" data-bs-target="#demo{{forloop.counter}}" data-bs-slide-to="0" class="active"></button>-->
+<!--      <button type="button" data-bs-target="#demo{{forloop.counter}}" data-bs-slide-to="1"></button>-->
+<!--      <button type="button" data-bs-target="#demo{{forloop.counter}}" data-bs-slide-to="2"></button>-->
+<!--    </div>-->
+
+    <!-- Carousel inner -->
+    <div class="carousel-inner border-top pt-4">
+      <!-- Slide 1 -->
+      {% for product in products %}
+       {% if forloop.first or forloop.counter0|divisibleby:6 %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="row g-2">
+        {% endif %}
+            <div class="col-lg-2 col-md-4 col-sm-6 col-6">
+              <div class="card">
+                <img src="/media/{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text">{{ product.price }} BDT</p>
+                  <a href="product/{{product.id}}" class="btn btn-primary">Add To Cart</a>
+                </div>
+              </div>
+            </div>
+      {% if forloop.counter|divisibleby:6 or forloop.last %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo{{forloop.counter}}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo{{forloop.counter}}" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}

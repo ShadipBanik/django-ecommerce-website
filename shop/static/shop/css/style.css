@@ -1,0 +1,25 @@
+.carousel-control-next, .carousel-control-prev {
+   width: auto!important
+}
+ .card img{
+   height:150px !important
+}
+
+ .card{
+  height:315px !important
+}
+    #cart-sidebar {
+    background: #fff;
+    padding: 15px;
+}
+#sidebar-items {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+#sidebar-items::-webkit-scrollbar {
+    width: 6px;
+}
+#sidebar-items::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 3px;
+}
