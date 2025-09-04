@@ -105,7 +105,11 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
-ALLOWED_HOSTS = ["https://django-ecommerce-website-371n.onrender.com"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "django-ecommerce-website-371n.onrender.com",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
