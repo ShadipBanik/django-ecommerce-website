@@ -103,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    ...
 ]
 
 ALLOWED_HOSTS = ["https://django-ecommerce-website-371n.onrender.com"]
